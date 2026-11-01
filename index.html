@@ -1,0 +1,637 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}[hidden]{display:none!important}</style>
+<title>Ravi Teja K | Product Management Portfolio</title>
+<meta name="description" content="Product Manager portfolio of Ravi Teja K: iGuru ERP modernization, Doqzy CLM and COS.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: spec-sheet portfolio. Sticky slim nav, hero with a "currently" status card on a faint blueprint grid,
+   lifecycle strip, tabbed case studies, ownership matrix, timeline, contact. Netflix-style red on black. */
+:root {
+  --bg: #141414;
+  --surface: #1F1F1F;
+  --surface-2: #2B2B2B;
+  --ink: #FFFFFF;
+  --muted: #B3B3B3;
+  --line: #3A3A3A;
+  --accent: #E50914;
+  --accent-text: #FF4D4D;
+  --accent-ink: #FFFFFF;
+  --accent-soft: #3A1013;
+  --grid: rgba(255, 255, 255, 0.05);
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.6), 0 16px 36px -14px rgba(0, 0, 0, 0.9);
+  --lift: 0 6px 16px rgba(0, 0, 0, 0.75), 0 2px 4px rgba(0, 0, 0, 0.6);
+  --lift-hover: 0 12px 26px rgba(0, 0, 0, 0.85), 0 3px 6px rgba(0, 0, 0, 0.6);
+  --glow: 0 8px 22px rgba(229, 9, 20, 0.5), 0 2px 4px rgba(0, 0, 0, 0.6);
+  --display: "Plus Jakarta Sans", "Segoe UI", system-ui, sans-serif;
+  --body: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --maxw: 1120px;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.6;
+  padding-block: 0;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--bg);
+  z-index: 10;
+}
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 4px; }
+.wrap { max-width: var(--maxw); margin: 0 auto; }
+.skip { position: absolute; left: -999px; top: 8px; background: var(--accent); color: var(--accent-ink); padding: 8px 12px; border-radius: 6px; z-index: 30; box-shadow: var(--glow); }
+.skip:focus { left: 8px; }
+
+/* Nav */
+.nav {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--line);
+  margin-inline: calc(-1 * max(16px, env(safe-area-inset-left, 0px)));
+  padding-inline: max(16px, env(safe-area-inset-left, 0px));
+}
+.nav-in { max-width: var(--maxw); margin: 0 auto; display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 60px; flex-wrap: wrap; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 17px; }
+.mark { width: 30px; height: 30px; border-radius: 7px; background: var(--accent); color: #fff; box-shadow: var(--glow); display: grid; place-items: center; font-family: var(--mono); font-size: 12px; font-weight: 500; letter-spacing: -0.02em; }
+.nav ul { display: flex; gap: 4px; list-style: none; margin: 0; padding: 0; flex-wrap: wrap; }
+.nav ul a { display: block; padding: 8px 14px; font-size: 14px; color: var(--ink); background: var(--surface); text-decoration: none; border-radius: 8px; box-shadow: var(--lift); transition: transform .15s ease, box-shadow .15s ease, background .15s ease; }
+.nav ul a:hover { background: var(--surface-2); box-shadow: var(--lift-hover); transform: translateY(-1px); }
+
+/* Buttons */
+.btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 20px; border-radius: 10px; font: 500 15px/1 var(--body); text-decoration: none; border: 1px solid var(--line); background: var(--surface); color: var(--ink); cursor: pointer; box-shadow: var(--lift); transition: transform .15s ease, background .15s ease, border-color .15s ease, box-shadow .15s ease; }
+.btn:hover { border-color: var(--ink); transform: translateY(-1px); box-shadow: var(--lift-hover); }
+.btn.primary { background: var(--accent); border-color: var(--accent); color: var(--accent-ink); box-shadow: var(--glow); }
+.btn.primary:hover { background: var(--accent); filter: brightness(1.08); border-color: var(--accent); }
+
+/* Hero */
+.hero { position: relative; padding-block: 72px 56px; }
+.hero::before {
+  content: ""; position: absolute; inset: 0 calc(-1 * max(16px, env(safe-area-inset-left, 0px))); z-index: -1;
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: linear-gradient(to bottom, #000 40%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, #000 40%, transparent);
+}
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 48px; align-items: center; }
+.eyebrow { font-family: var(--mono); font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-text); margin: 0 0 20px; }
+h1, h2, h3, h4 { font-family: var(--display); text-wrap: balance; margin: 0; line-height: 1.08; letter-spacing: -0.02em; }
+h1 { font-size: clamp(2.4rem, 5.6vw, 4.2rem); font-weight: 800; letter-spacing: -0.035em; }
+h1 em { font-style: normal; color: var(--accent-text); }
+.lede { font-size: 1.15rem; color: var(--muted); max-width: 56ch; margin: 24px 0 32px; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+.status { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; box-shadow: var(--shadow); padding: 24px; }
+.pill { display: inline-flex; align-items: center; gap: 8px; font-family: var(--mono); font-size: 12px; padding: 6px 12px; border-radius: 999px; background: var(--accent-soft); color: var(--accent-text); }
+.pill i { width: 7px; height: 7px; border-radius: 50%; background: currentColor; }
+.status dl { margin: 20px 0 0; display: grid; gap: 0; }
+.status dl > div { display: flex; justify-content: space-between; gap: 16px; padding: 12px 0; border-top: 1px solid var(--line); font-size: 14px; }
+.status dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); padding-top: 2px; flex: none; }
+.status dd { margin: 0; text-align: right; font-weight: 500; min-width: 0; }
+
+/* Sections */
+section { padding-block: 72px; }
+.head { display: flex; align-items: end; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-bottom: 36px; }
+.head h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 600; max-width: 18ch; }
+.head p { margin: 0; color: var(--muted); max-width: 44ch; }
+.label { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); margin: 0 0 12px; }
+
+/* Lifecycle */
+.flow { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); border: 1px solid var(--line); border-radius: 16px; background: var(--surface); overflow: hidden; }
+.flow > div { padding: 22px 20px; border-left: 1px solid var(--line); }
+.flow > div:first-child { border-left: 0; }
+.flow b { display: block; font-family: var(--mono); font-size: 11px; color: var(--accent-text); font-weight: 500; letter-spacing: 0.1em; margin-bottom: 10px; }
+.flow h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 8px; }
+.flow p { margin: 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
+
+/* Work */
+.tabs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin-bottom: 20px; }
+.tab { text-align: left; background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 18px 20px; cursor: pointer; color: var(--ink); font-family: var(--body); box-shadow: var(--lift); transition: border-color .15s ease, background .15s ease, box-shadow .15s ease, transform .15s ease; }
+.tab:hover { border-color: var(--muted); box-shadow: var(--lift-hover); transform: translateY(-1px); }
+.tab[aria-selected="true"] { border-color: var(--accent); background: var(--accent-soft); box-shadow: inset 0 0 0 1px var(--accent), var(--glow); }
+.tab .k { display: block; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.tab[aria-selected="true"] .k { color: var(--accent-text); }
+.tab strong { display: block; font-family: var(--display); font-size: 1.35rem; font-weight: 600; letter-spacing: -0.01em; }
+.tab span.s { display: block; font-size: 14px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+
+.case { background: var(--surface); border: 1px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); padding: clamp(22px, 4vw, 40px); }
+.case-top { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px; }
+.case h3 { font-size: clamp(1.7rem, 3.4vw, 2.4rem); font-weight: 600; margin-bottom: 8px; }
+.case .tag { color: var(--muted); font-size: 1.1rem; margin: 0 0 28px; max-width: 46ch; }
+.case h4 { font-size: 1.05rem; font-weight: 600; letter-spacing: -0.005em; margin-bottom: 8px; }
+.case p { margin: 0 0 24px; max-width: 62ch; }
+.meta { display: grid; gap: 0; align-content: start; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); }
+.meta > div { padding: 16px 18px; border-top: 1px solid var(--line); }
+.meta > div:first-child { border-top: 0; }
+.meta dt { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 4px; }
+.meta dd { margin: 0; font-weight: 500; font-size: 15px; }
+.chips { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 24px; padding: 0; list-style: none; }
+.chips li { font-size: 13px; padding: 6px 12px; border-radius: 999px; border: 1px solid var(--line); background: var(--bg); }
+.chips.skills li { background: var(--accent-soft); border-color: transparent; color: var(--accent-text); font-weight: 500; }
+.shift { display: flex; align-items: stretch; gap: 0; flex-wrap: wrap; margin-bottom: 28px; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: var(--bg); }
+.shift > div { padding: 18px 22px; flex: 1 1 180px; min-width: 0; border-left: 1px solid var(--line); }
+.shift > div:first-child { border-left: 0; }
+.shift .n { font-family: var(--display); font-size: clamp(1.7rem, 3.4vw, 2.3rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.1; font-variant-numeric: tabular-nums; }
+.shift .n small { font-size: 0.5em; font-weight: 500; color: var(--muted); margin-left: 4px; }
+.shift .c { font-size: 13px; color: var(--muted); margin-top: 4px; }
+.shift .arrow { color: var(--accent-text); }
+.takeaway { margin-top: 8px; padding: 20px 0 0; border-top: 1px solid var(--line); background: none; color: var(--ink); }
+.takeaway .label { color: var(--accent-text); margin-bottom: 6px; }
+.takeaway p { margin: 0; font-family: var(--body); font-size: 1.05rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1.35; max-width: none; }
+.steps { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin: 0 0 28px; padding: 0; list-style: none; }
+.steps li { font-family: var(--mono); font-size: 13px; padding: 10px 16px; border-radius: 10px; border: 1px solid var(--line); background: var(--bg); }
+.steps li + li::before { content: "\2192"; color: var(--accent-text); margin-right: 12px; }
+.steps li + li { position: relative; }
+.stack { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 0 0 28px; }
+.stack > div { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; background: var(--bg); }
+.stack b { display: block; font-family: var(--display); font-size: 1.05rem; font-weight: 600; margin-bottom: 4px; }
+.stack span { font-size: 14px; color: var(--muted); }
+.note { font-size: 13px; color: var(--muted); margin: 0; }
+
+/* Ownership */
+.own { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.own > div { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 26px; }
+.own > div.me { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent); }
+.own h3 { font-size: 1.4rem; font-weight: 600; margin-bottom: 4px; }
+.own .who { font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 16px; }
+.own .me .who { color: var(--accent-text); }
+.own ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.own li { display: flex; gap: 10px; font-size: 15px; }
+.own li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--line); margin-top: 9px; }
+.own .me li::before { background: var(--accent); }
+.own-note { margin: 24px 0 0; color: var(--muted); max-width: 70ch; }
+
+/* About + timeline */
+.about { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 56px; align-items: start; }
+.about h2 { font-size: clamp(1.9rem, 4vw, 2.8rem); font-weight: 600; margin-bottom: 20px; }
+.about p { color: var(--muted); font-size: 1.05rem; margin: 0 0 16px; max-width: 52ch; }
+.path { display: grid; gap: 16px; min-width: 0; }
+.tl { list-style: none; margin: 0; padding: 0; position: relative; display: grid; gap: 16px; }
+.tl li { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; }
+.tl .when { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: 8px; }
+.tl h3 { font-size: 1.3rem; font-weight: 600; margin-bottom: 2px; }
+.tl .org { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+.tl p { margin: 0; font-size: 15px; color: var(--ink); }
+
+/* Impact */
+.impact { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr); gap: 0; margin-bottom: 28px; border: 1px solid var(--line); border-radius: 14px; background: var(--bg); overflow: hidden; }
+.impact .cmp { padding: 20px 22px; display: grid; gap: 14px; }
+.impact .cmp .label { margin: 0; }
+.impact .row { display: grid; grid-template-columns: 112px minmax(0, 1fr) 96px; align-items: center; gap: 14px; }
+.impact .when { font-size: 14px; color: var(--muted); }
+.impact .val { font-family: var(--display); font-size: 1.2rem; font-weight: 700; letter-spacing: -0.02em; text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.impact .bar { display: flex; height: 16px; border-radius: 999px; background: var(--surface-2); overflow: hidden; }
+.impact .bar i { display: block; height: 100%; }
+.impact .bar .b { background: var(--muted); opacity: 0.55; }
+.impact .bar .a { background: var(--accent); }
+.impact .bar .r { background: repeating-linear-gradient(135deg, var(--accent) 0 3px, transparent 3px 6px); }
+.impact .mod { padding: 20px 22px; border-left: 1px solid var(--line); display: flex; flex-direction: column; justify-content: center; background: var(--accent-soft); }
+.impact .mod .n { font-family: var(--display); font-size: clamp(2.2rem, 4.4vw, 3rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; color: var(--accent-text); font-variant-numeric: tabular-nums; }
+.impact .mod .c { font-size: 14px; color: var(--ink); margin-top: 6px; }
+@media (max-width: 700px) {
+  .impact { grid-template-columns: minmax(0, 1fr); }
+  .impact .mod { border-left: 0; border-top: 1px solid var(--line); }
+  .impact .row { grid-template-columns: minmax(0, 1fr) auto; row-gap: 6px; }
+  .impact .bar { grid-column: 1 / -1; order: 3; }
+}
+
+/* Journey */
+.phases { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin-bottom: 18px; }
+.ph { padding-bottom: 8px; border-bottom: 2px solid var(--line); font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); }
+.ph.one { grid-column: 1 / 2; }
+.ph.two { grid-column: 2 / 5; border-bottom-color: var(--accent); color: var(--accent-text); }
+.journey { list-style: none; margin: 0; padding: 0; position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.journey::before { content: ""; position: absolute; left: 0; right: 0; top: 9px; height: 2px; background: linear-gradient(90deg, var(--line) 0%, var(--line) 18%, var(--accent) 30%, var(--accent) 100%); }
+.stop { position: relative; padding-top: 34px; min-width: 0; }
+.node { position: absolute; top: 0; left: 0; width: 20px; height: 20px; border-radius: 50%; background: var(--bg); border: 2px solid var(--muted); }
+.s2 .node { border-color: var(--accent); background: var(--accent-soft); }
+.s3 .node { border-color: var(--accent); background: var(--accent); box-shadow: 0 0 0 5px var(--accent-soft); }
+.s4 .node { border: 2px dashed var(--accent); background: var(--bg); }
+.stop .card { height: 100%; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px; box-shadow: var(--shadow); }
+.s3 .card { border-color: var(--accent); box-shadow: inset 0 0 0 1px var(--accent), var(--shadow); }
+.s4 .card { background: transparent; border-style: dashed; border-color: var(--accent); box-shadow: none; }
+.stop .when { font-family: var(--mono); font-size: 12px; letter-spacing: 0.08em; color: var(--accent-text); margin-bottom: 8px; }
+.stop h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 4px; }
+.stop .org { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+.learn { margin: 0; padding-top: 14px; border-top: 1px solid var(--line); font-size: 15px; }
+.learn b { display: block; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.resp { margin: 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.resp li { display: flex; gap: 10px; font-size: 14px; line-height: 1.45; }
+.resp li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-top: 7px; }
+.stop .card { display: flex; flex-direction: column; }
+.story { margin: 0 0 18px; font-size: 15px; line-height: 1.55; }
+.lesson { margin-top: auto; padding: 12px 14px; border-radius: 10px; background: var(--accent-soft); font-size: 14px; line-height: 1.45; }
+.lesson b { display: block; font-family: var(--mono); font-size: 11px; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent-text); margin-bottom: 4px; }
+.phase-tag { display: none; font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; }
+.s2 .phase-tag, .s3 .phase-tag, .s4 .phase-tag { color: var(--accent-text); }
+@media (max-width: 900px) {
+  .phases { display: none; }
+  .journey { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .journey::before { left: 9px; right: auto; top: 10px; bottom: 10px; width: 2px; height: auto; background: linear-gradient(180deg, var(--line) 0%, var(--line) 15%, var(--accent) 28%, var(--accent) 100%); }
+  .stop { padding-top: 0; padding-left: 40px; }
+  .node { top: 22px; }
+  .phase-tag { display: block; }
+}
+
+/* Customer-facing foundation */
+.about .exp { margin-top: 0; background: var(--surface); border: 1px solid var(--line); border-radius: 16px; padding: 22px 24px; }
+.about .exp .label { color: var(--accent-text); font-size: 11px; max-width: none; margin: 0 0 14px; }
+.exp h3 { font-size: 1.2rem; font-weight: 600; margin-bottom: 2px; }
+.exp .org { color: var(--muted); font-size: 14px; margin-bottom: 14px; }
+.exp ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+.exp li { display: flex; gap: 10px; font-size: 15px; }
+.exp li::before { content: ""; flex: none; width: 6px; height: 6px; border-radius: 50%; background: var(--accent); margin-top: 9px; }
+
+/* Contact */
+.contact { background: linear-gradient(135deg, #E50914 0%, #B20710 100%); color: #fff; box-shadow: 0 24px 60px -20px rgba(229, 9, 20, 0.55); border-radius: 24px; padding: clamp(28px, 6vw, 64px); }
+.contact .label { color: rgba(255, 255, 255, 0.8); }
+.contact h2 { font-size: clamp(1.9rem, 4.4vw, 3.2rem); font-weight: 600; max-width: 20ch; margin-bottom: 14px; }
+.contact > p { margin: 0 0 32px; color: rgba(255, 255, 255, 0.9); max-width: 52ch; }
+.mail { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-bottom: 20px; }
+.mail code { font-family: var(--mono); font-size: clamp(14px, 2.6vw, 18px); padding: 12px 16px; border-radius: 10px; border: 1px solid rgba(255, 255, 255, 0.45); background: rgba(0, 0, 0, 0.2); user-select: all; overflow-wrap: anywhere; }
+.contact .btn { background: rgba(0, 0, 0, 0.28); color: #fff; border-color: rgba(255, 255, 255, 0.5); box-shadow: 0 8px 18px rgba(0, 0, 0, 0.4), 0 2px 4px rgba(0, 0, 0, 0.3); }
+.contact .btn:hover { border-color: #fff; box-shadow: 0 12px 26px rgba(0, 0, 0, 0.5), 0 3px 6px rgba(0, 0, 0, 0.3); }
+.contact .btn.primary { background: #fff; color: #141414; border-color: #fff; }
+.links { display: flex; gap: 12px; flex-wrap: wrap; }
+footer { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-block: 40px 56px; color: var(--muted); font-size: 14px; }
+footer a { text-decoration: none; color: var(--ink); background: var(--surface); padding: 8px 14px; border-radius: 8px; box-shadow: var(--lift); transition: box-shadow .15s ease, transform .15s ease; }
+footer a:hover { box-shadow: var(--lift-hover); transform: translateY(-1px); }
+
+@media (max-width: 900px) {
+  .hero-grid, .case-top, .about { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .flow { grid-template-columns: minmax(0, 1fr); }
+  .flow > div { border-left: 0; border-top: 1px solid var(--line); }
+  .flow > div:first-child { border-top: 0; }
+  .own { grid-template-columns: minmax(0, 1fr); }
+  .stack { grid-template-columns: minmax(0, 1fr); }
+  .tabs { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .hero { padding-block: 48px 32px; }
+  section { padding-block: 48px; }
+  .nav ul a { padding: 8px; }
+  .shift > div { border-left: 0; border-top: 1px solid var(--line); }
+  .shift > div:first-child { border-top: 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn, .tab, .nav ul a, footer a { transition: none; }
+  .btn:hover, .tab:hover, .nav ul a:hover, footer a:hover { transform: none; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="nav-in">
+    <a class="brand" href="#top" aria-label="Ravi Teja K, back to top"><span class="mark">rt</span>Ravi Teja K</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#work">My Work</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#about">Journey</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap hero" id="top">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">Product Manager | Product Owner | Product Delivery | B2B SaaS</p>
+        <h1>Closer to the problem. <em>Better at the product.</em></h1>
+        <p class="lede">I define requirements, prioritize work and drive delivery across ERP, contract lifecycle and internal operations products, grounded in real customer problems.</p>
+        <div class="cta">
+          <a class="btn primary" href="#work">View selected work</a>
+          <a class="btn" href="https://www.linkedin.com/in/ravitejacsm" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn" href="https://app.notion.com/p/3df7dfbf4bef81cd8fabf2b28f91e3bd" target="_blank" rel="noopener">Notion portfolio</a>
+        </div>
+      </div>
+      <aside class="status" aria-label="Current status">
+        <span class="pill"><i></i>Open to PM / APM roles</span>
+        <dl>
+          <div><dt>Role</dt><dd>Associate Product Manager</dd></div>
+          <div><dt>Company</dt><dd>AAAMT Verticals</dd></div>
+          <div><dt>Tenure</dt><dd>Mar 2025 – Jul 2026</dd></div>
+          <div><dt>Products</dt><dd>iGuru · Doqzy · COS</dd></div>
+          <div><dt>Location</dt><dd>Hyderabad · Fully remote</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <p class="label">How the work moves</p>
+    <div class="flow">
+      <div><b>01</b><h3>Discovery</h3><p>Customer feedback and recurring support issues, read as product signal.</p></div>
+      <div><b>02</b><h3>Requirements</h3><p>Requirements, user stories and workflow changes engineers can build from.</p></div>
+      <div><b>03</b><h3>Prioritization</h3><p>Practical priorities, grounded in real customer problems.</p></div>
+      <div><b>04</b><h3>Design handoff</h3><p>Flows prepared for design, behavior clarified with engineering.</p></div>
+      <div><b>05</b><h3>Release</h3><p>QA, user acceptance testing and rollout, coordinated end to end.</p></div>
+    </div>
+  </div>
+
+  <section class="wrap" id="work">
+    <div class="head">
+      <h2>Three products, from discovery to delivery.</h2>
+      <p>Pick a project to see the problem, my role and what I owned.</p>
+    </div>
+
+    <div class="tabs" role="tablist" aria-label="Projects">
+      <button class="tab" role="tab" id="t-iguru" aria-controls="p-iguru" aria-selected="true" type="button">
+        <span class="k">Product modernization</span><strong>iGuru ERP</strong><span class="s">Making complex workflows easier to use.</span>
+      </button>
+      <button class="tab" role="tab" id="t-doqzy" aria-controls="p-doqzy" aria-selected="false" tabindex="-1" type="button">
+        <span class="k">0 → 1 product · Concept to MVP</span><strong>Doqzy CLM</strong><span class="s">From scattered contracts to one lifecycle.</span>
+      </button>
+      <button class="tab" role="tab" id="t-cos" aria-controls="p-cos" aria-selected="false" tabindex="-1" type="button">
+        <span class="k">Internal operations</span><strong>COS</strong><span class="s">Every request recorded. Every handoff clear.</span>
+      </button>
+    </div>
+
+    <!-- iGuru -->
+    <article class="case" role="tabpanel" id="p-iguru" aria-labelledby="t-iguru">
+      <div class="case-top">
+        <div>
+          <p class="label">Case study · Product modernization</p>
+          <h3>iGuru ERP</h3>
+          <p class="tag">Modernizing the everyday tools that educational institutions depend on.</p>
+
+          <div class="impact" role="group" aria-label="Implementation time and scope">
+            <div class="cmp">
+              <p class="label">Implementation time, drawn to scale</p>
+              <div class="row">
+                <span class="when">Before</span>
+                <div class="bar" aria-hidden="true"><i class="b" style="width:100%"></i></div>
+                <b class="val">~30 days</b>
+              </div>
+              <div class="row">
+                <span class="when">After, estimated</span>
+                <div class="bar" aria-hidden="true"><i class="a" style="width:33.33%"></i><i class="r" style="width:16.67%"></i></div>
+                <b class="val">10&ndash;15 days</b>
+              </div>
+            </div>
+            <div class="mod">
+              <div class="n">22&ndash;25</div>
+              <div class="c">modules modernized</div>
+            </div>
+          </div>
+
+          <h4>Where the work started</h4>
+          <p>Complex legacy workflows made configuration and everyday use difficult for educational institutions. Implementations took roughly 30 days, and teams frequently needed help with routine tasks.</p>
+
+          <h4>What I owned</h4>
+          <p>I translated customer feedback and recurring support issues into requirements, user stories and workflow changes. I prepared flows for design, clarified behavior with engineering, and coordinated QA, user acceptance testing and rollout.</p>
+        </div>
+        <div>
+          <dl class="meta">
+            <div><dt>My role</dt><dd>Associate Product Manager</dd></div>
+            <div><dt>Scope</dt><dd>Approximately 22–25 modules</dd></div>
+            <div><dt>Collaborators</dt><dd>Design · Engineering · QA · Customer Success</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="label">Selected modules</p>
+      <ul class="chips"><li>Fees</li><li>Admissions</li><li>Attendance</li><li>Exams</li><li>Library</li><li>Inventory</li><li>HRMS</li><li>Payroll</li></ul>
+      <p class="label">PM skills in this project</p>
+      <ul class="chips skills"><li>Customer discovery</li><li>Prioritization</li><li>Requirements</li><li>Workflow design</li><li>UX collaboration</li><li>UAT</li></ul>
+      <div class="takeaway"><p class="label">The takeaway</p><p>Frontline customer knowledge shows where a product's workflows need to change.</p></div>
+    </article>
+
+    <!-- Doqzy -->
+    <article class="case" role="tabpanel" id="p-doqzy" aria-labelledby="t-doqzy" hidden>
+      <div class="case-top">
+        <div>
+          <p class="label">Case study · 0 → 1 product</p>
+          <h3>Doqzy CLM</h3>
+          <p class="tag">From scattered contracts to one lifecycle. A contract lifecycle management product taken from concept to MVP.</p>
+          <h4>The connected contract journey</h4>
+          <ol class="steps"><li>Draft</li><li>Review</li><li>Sign</li><li>Repository + reminders</li></ol>
+          <p>One connected journey across every stage of a contract's life, from first draft to reminders.</p>
+        </div>
+        <div>
+          <dl class="meta">
+            <div><dt>Stage</dt><dd>Concept to MVP</dd></div>
+            <div><dt>Type</dt><dd>0 → 1 product</dd></div>
+            <div><dt>Company</dt><dd>AAAMT Verticals</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="label">PM skills in this project</p>
+      <ul class="chips skills"><li>Product scope</li><li>Workflows</li><li>Prioritization</li><li>Releases</li></ul>
+          </article>
+
+    <!-- COS -->
+    <article class="case" role="tabpanel" id="p-cos" aria-labelledby="t-cos" hidden>
+      <div class="case-top">
+        <div>
+          <p class="label">Case study · Internal operations</p>
+          <h3>COS</h3>
+          <p class="tag">A customer operating system. Every request recorded. Every handoff clear.</p>
+          <h4>One shared record across teams</h4>
+          <div class="stack">
+            <div><b>Support</b><span>Every request recorded</span></div>
+            <div><b>Purchase orders</b><span>Every handoff clear</span></div>
+            <div><b>Collections</b><span>Clear ownership</span></div>
+          </div>
+          <p>Shared records and clear ownership across customer operations.</p>
+        </div>
+        <div>
+          <dl class="meta">
+            <div><dt>Type</dt><dd>Internal operations product</dd></div>
+            <div><dt>Covers</dt><dd>Support · Purchase orders · Collections</dd></div>
+            <div><dt>Company</dt><dd>AAAMT Verticals</dd></div>
+          </dl>
+        </div>
+      </div>
+      <p class="label">PM skills in this project</p>
+      <ul class="chips skills"><li>Product scope</li><li>Workflows</li><li>Prioritization</li><li>Releases</li></ul>
+          </article>
+  </section>
+
+  <section class="wrap" id="approach">
+    <div class="head">
+      <h2>Clear on who owns what.</h2>
+      <p>Product work is a team sport. This is where I sit in it.</p>
+    </div>
+    <div class="own">
+      <div class="me">
+        <p class="who">Product · me</p>
+        <h3>Defines the what</h3>
+        <ul>
+          <li>Product workflows and requirements</li>
+          <li>User stories and flow definitions</li>
+          <li>Priorities across modules</li>
+          <li>QA and UAT coordination, release rollout</li>
+        </ul>
+      </div>
+      <div>
+        <p class="who">Design</p>
+        <h3>Shapes the experience</h3>
+        <ul>
+          <li>Final screens</li>
+          <li>Built from the flows I prepare</li>
+        </ul>
+      </div>
+      <div>
+        <p class="who">Engineering</p>
+        <h3>Builds it</h3>
+        <ul>
+          <li>Architecture</li>
+          <li>Implementation</li>
+          <li>Behavior clarified with me before build</li>
+        </ul>
+      </div>
+    </div>
+    <p class="own-note">I connect the three through clarification, validation and release coordination.</p>
+  </section>
+
+  <section class="wrap" id="about">
+    <div class="head">
+      <h2>From customer problems to product decisions.</h2>
+      <p>I learned product on the front line, where problems show up in real time. Then I moved closer to the decisions that fix them.</p>
+    </div>
+
+    <div class="phases" aria-hidden="true">
+      <div class="ph one"><span>Hearing the problems</span></div>
+      <div class="ph two"><span>Fixing them</span></div>
+    </div>
+
+    <ol class="journey" aria-label="Career journey">
+      <li class="stop s1">
+        <span class="node" aria-hidden="true"></span>
+        <div class="card">
+          <span class="phase-tag">Hearing the problems</span>
+          <div class="when">2019 – 2022</div>
+          <h3>Senior Customer Representative</h3>
+          <div class="org">Sykes</div>
+          <p class="story">I spent three years in customer-facing roles, talking to customers and hearing first-hand where products and processes fall short for the people using them.</p>
+          <div class="lesson"><b>What it taught me</b>Problems are clearest at the moment a customer feels them.</div>
+        </div>
+      </li>
+      <li class="stop s2">
+        <span class="node" aria-hidden="true"></span>
+        <div class="card">
+          <span class="phase-tag">Fixing them</span>
+          <div class="when">NOV 2022 – FEB 2025</div>
+          <h3>Associate Product Manager</h3>
+          <div class="org">iGuru Portal Services</div>
+          <p class="story">As an Associate Product Manager at iGuru, I worked on modernizing the ERP across 22–25 modules, from Fees and Admissions to HRMS and Payroll. I turned customer feedback and recurring support issues into requirements, user stories and workflow changes.</p>
+          <div class="lesson"><b>What it taught me</b>Support issues are product feedback arriving in real time.</div>
+        </div>
+      </li>
+      <li class="stop s3">
+        <span class="node" aria-hidden="true"></span>
+        <div class="card">
+          <span class="phase-tag">Fixing them</span>
+          <div class="when">MAR 2025 – JUL 2026</div>
+          <h3>Associate Product Manager</h3>
+          <div class="org">AAAMT Verticals Services Limited · formerly iGuru</div>
+          <p class="story">I took Doqzy, a contract lifecycle management product, from 0 to 1 and through its MVP launch. I also took COS from ideation to release for existing clients.</p>
+          <div class="lesson"><b>What it taught me</b>Frontline knowledge shows where a product&rsquo;s workflows need to change.</div>
+        </div>
+      </li>
+      <li class="stop s4">
+        <span class="node" aria-hidden="true"></span>
+        <div class="card">
+          <span class="phase-tag">Fixing them</span>
+          <div class="when">NEXT</div>
+          <h3>Product Manager</h3>
+          <div class="org">Open to roles · Hyderabad or fully remote</div>
+          <p class="story">I&rsquo;m looking for a Product Manager or Product Owner role where this close-to-the-problem view shapes product decisions from day one.</p>
+          <div class="lesson"><b>What I bring</b><ul class="resp"><li>Customer-led priorities: decisions start from real customer problems, not assumptions.</li><li>End-to-end delivery: from requirements and design handoff through QA and UAT to rollout.</li></ul></div>
+        </div>
+      </li>
+    </ol>
+  </section>
+
+  <section class="wrap" id="contact" style="padding-top:24px">
+    <div class="contact">
+      <p class="label">Let's talk product</p>
+      <h2>A good product conversation starts with a real problem.</h2>
+      <p>I'm exploring PM and APM roles in Hyderabad or with fully remote teams.</p>
+      <div class="mail">
+        <code id="email">ravi.teja626@gmail.com</code>
+        <button class="btn" id="copy" type="button">Copy email</button>
+      </div>
+      <div class="links">
+        <a class="btn primary" href="https://www.linkedin.com/in/ravitejacsm" target="_blank" rel="noopener">Connect on LinkedIn</a>
+        <a class="btn" href="https://app.notion.com/p/3df7dfbf4bef81cd8fabf2b28f91e3bd" target="_blank" rel="noopener">Notion portfolio</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap">
+  <span>© 2026 Ravi Teja K · Built around real product work.</span>
+  <a href="#top">Back to top ↑</a>
+</footer>
+
+<script>
+(function () {
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('.tab'));
+  function select(tab, focus) {
+    tabs.forEach(function (t) {
+      var on = t === tab;
+      t.setAttribute('aria-selected', on ? 'true' : 'false');
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (focus) tab.focus();
+  }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () { select(t, false); });
+    t.addEventListener('keydown', function (e) {
+      var n = null;
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') n = tabs[(i + 1) % tabs.length];
+      if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') n = tabs[(i - 1 + tabs.length) % tabs.length];
+      if (n) { e.preventDefault(); select(n, true); }
+    });
+  });
+
+  var btn = document.getElementById('copy');
+  var mail = document.getElementById('email');
+  function selectMail() {
+    var r = document.createRange(); r.selectNodeContents(mail);
+    var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+  }
+  btn.addEventListener('click', function () {
+    var text = mail.textContent.trim();
+    function done(ok) {
+      btn.textContent = ok ? 'Copied' : 'Selected, press copy';
+      setTimeout(function () { btn.textContent = 'Copy email'; }, 2000);
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () { done(true); }, function () { selectMail(); done(false); });
+    } catch (e) { selectMail(); done(false); }
+  });
+})();
+</script>
+</body>
+</html>
